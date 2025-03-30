@@ -38,7 +38,7 @@ Chatter is a modern real-time chat application that enables users to communicate
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/bhaxkar/Chatter.git
 ```
 
 2. Navigate to the backend directory:
