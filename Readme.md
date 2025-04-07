@@ -20,6 +20,7 @@ Chatter is a fully responsive real-time chat application that enables users to c
 
 - **File Upload**: Integrated ```Cloudinary cloud storage``` for media management, handling user profile pictures and message attachments
 
+<div align="center">
 
 |Frontend Technologies 🎨 |Backend Technologies 🛠|
 |--------------------------|-----------------------|
@@ -31,58 +32,26 @@ Chatter is a fully responsive real-time chat application that enables users to c
 | React Hot Toast for notifications | Cloudinary for image storage |
 | React Router Dom for navigation | CORS for cross-origin resource sharing |
 
+</div>
 
-## Setup and Installation 💻
-
-### Backend Setup
-
-1. Clone the repository:
-```bash
-git clone https://github.com/bhaxkar/Chatter.git
-```
-
-2. Navigate to the backend directory:
-```bash
-cd Chatter/backend
-```
-
-3. Install dependencies:
-```bash
-npm install
-```
-
-4. Create a .env file in the backend directory with the following variables:
+## Sample .env file in the backend directory:
 ```bash
 MONGODB_URI=your_mongodb_connection_string
-PORT=8000
-JWT_SECRET=your_jwt_secret
-NODE_ENV=development
-CLOUDINARY_CLOUD_NAME=your_cloud_name
+
+PORT=5001
+
+ACCESS_TOKEN_SECRET=your_access_token_secret
+ACCESS_TOKEN_EXPIRY=1d
+
+REFRESH_TOKEN_SECRET=your_refresh_token_secret
+REFRESH_TOKEN_EXPIRY=7d
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name 
 CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-```
+CLOUDINARY_API_SECRET=your_api_secret 
 
-5. Start the backend server
-```bash
-npm run dev
+NODE_ENV=development
 ```
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-```bash 
-cd ../frontend
-```
-2. Install dependencies:
-```bash 
-npm install
-```
-3. Start the frontend development server:
-```bash 
-npm run dev
-```
-
-The application should now be running at http://localhost:5173
 
 ## Contact 
 👾 Bhaskar Jha (✉️ [@bhaxkar](mailto:bhaskarjha.info@gmail.com)  )
