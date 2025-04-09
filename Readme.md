@@ -34,24 +34,5 @@ Chatter is a fully responsive real-time chat application that enables users to c
 
 </div>
 
-## Sample .env file in the backend directory:
-```bash
-MONGODB_URI=your_mongodb_connection_string
-
-PORT=5001
-
-ACCESS_TOKEN_SECRET=your_access_token_secret
-ACCESS_TOKEN_EXPIRY=1d
-
-REFRESH_TOKEN_SECRET=your_refresh_token_secret
-REFRESH_TOKEN_EXPIRY=7d
-
-CLOUDINARY_CLOUD_NAME=your_cloud_name 
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret 
-
-NODE_ENV=development
-```
-
 ## Contact 
 👾 Bhaskar Jha (✉️ [@bhaxkar](mailto:bhaskarjha.info@gmail.com)  )
