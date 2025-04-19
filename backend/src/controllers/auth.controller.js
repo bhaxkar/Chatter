@@ -1,4 +1,5 @@
-import { User } from "../models/user.model.js"
+import { User } from "../models/user.model.js";
+import jwt from "jsonwebtoken";
 
 const options = {
     maxAge: 7 * 24 * 60 * 60 * 1000,
@@ -13,12 +14,12 @@ const generateAccessAndRefreshToken = async (userId) => {
         const accessToken =  user.generateAccessToken();
         const refreshToken =  user.generateRefreshToken();
     
-        user.refreshToken = refreshToken
-        await user.save({ validateBeforeSave: false })
+        user.refreshToken = refreshToken;
+        await user.save({ validateBeforeSave: false });
 
-        return { accessToken, refreshToken }
+        return { accessToken, refreshToken };
     } catch (error) {
-        throw new Error("Something went wrong while generating tokens", error)
+        throw new Error("Something went wrong while generating tokens", error);
     } 
 };
 
@@ -122,6 +123,38 @@ export const logout = async( req, res ) => {
         return res.status(500).json({ message: "Something went wrong during logout" });
     }
 };
+
+export const refreshAccessToken = async(req, res) => {
+    const refreshToken = req?.cookies?.refreshToken || req?.body?.refreshToken;
+    if(!refreshToken){
+        return res.status(401).json({message: "Unauthorized request: refresh token not found"})
+    }
+
+    try {
+        const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+        const user = await User.findById(decoded?._id);
+        if(!user) {
+            return res.status(411).json({message: "Invalid refresh token"});
+        }
+        if( refreshToken != user?.refreshToken){
+            return res.status(401).json({message: "Refresh Token has been used or expired"})
+        }
+
+        const { accessToken, refreshToken: newRefreshToken } = await generateAccessAndRefreshToken(user._id);
+
+        return res
+        .status(200)
+        .cookie("accessToken", accessToken, options)
+        .cookie("refreshToken", newRefreshToken, options)
+        .json({
+            message: "Access token refreshed successfully"
+        })
+
+    } catch (error) {
+        console.log("Error while refreshing access token", error.message);
+        return res.status(500).json({ message: "Something went wrong while refreshing access token" });
+    }
+}
 
 export const validateAuth = async( req, res ) => {
     try {
