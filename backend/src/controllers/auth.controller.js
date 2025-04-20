@@ -76,11 +76,11 @@ export const login = async( req, res ) => {
         }
         const user = await User.findOne({email});
         if(!user){
-            return res.status(400).json({message: "User does not exist"});
+            return res.status(404).json({message: "User does not exist"});
         }
         const isPasswordValid = await user.isPasswordCorrect(password);
         if(!isPasswordValid){
-            return res.status(400).json({message: "Invalid credentials"});
+            return res.status(401).json({message: "Invalid credentials"});
         }
         const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id);
 
@@ -134,7 +134,7 @@ export const refreshAccessToken = async(req, res) => {
         const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
         const user = await User.findById(decoded?._id);
         if(!user) {
-            return res.status(411).json({message: "Invalid refresh token"});
+            return res.status(401).json({message: "Invalid refresh token"});
         }
         if( refreshToken != user?.refreshToken){
             return res.status(401).json({message: "Refresh Token has been used or expired"})

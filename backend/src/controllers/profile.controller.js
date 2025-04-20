@@ -65,7 +65,7 @@ export const changeCurrentPassword = async(req, res) => {
     try {
         const {currentPassword, newPassword, confirmNewPassword} = req.body;
         if(newPassword !== confirmNewPassword){
-            return res.status(401).json({message: "New password and confirmed new password do not match"})
+            return res.status(400).json({message: "New password and confirmed new password do not match"})
         }
         if(newPassword.length < 6){
             return res.status(400).json({message: "Password must be atleast 6 charactetr"});

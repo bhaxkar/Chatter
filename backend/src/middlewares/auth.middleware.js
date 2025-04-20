@@ -6,11 +6,11 @@ export const authenticateJWT = async( req, res, next ) => {
         
         const token = req?.cookies?.accessToken;
         if(!token){
-            return res.status(401).json({message: "Unauthorized request: access token not found"});
+            return res.status(403).json({message: "Unauthorized request: access token not found"});
         }
         const decoded = jwt.verify( token, process.env.ACCESS_TOKEN_SECRET);
         if(!decoded){
-            return res.status(401).json({message: "Unauthorized request: Invalid access token"});
+            return res.status(403).json({message: "Unauthorized request: Invalid access token"});
         }
         const user = await User.findById(decoded?._id).select("-password -refreshToken");
         if(!user){
