@@ -92,11 +92,6 @@ const LoginPage = () => {
             onChange={(e) => setFormData({...formData, password: e.target.value})}
             className="w-full p-3 rounded-lg border border-gray-300 bg-white shadow-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
           />
-          <div className="flex justify-end mt-2">
-            <Link to="/forgot-password" className="text-sm text-blue-600 hover:text-blue-800 transition-colors">
-              Forgot password?
-            </Link>
-          </div>
         </div>
 
         <button 

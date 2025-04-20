@@ -10,6 +10,7 @@ export const useAuthStore = create((set, get) => ({
   isValidatingAuth: true,
   isSigningUp: false,
   isLoggingIn: false,
+  isRefreshingToken: false,
   onlineUsers: [],
   socket: null,
 
@@ -69,6 +70,23 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
+  refreshAccessToken: async() => {
+
+    if( get().isRefreshingToken) return;
+    set({ isRefreshingToken : true});
+    
+    try {
+      await axiosInstance.post("/auth/refresh-token");
+      return true;
+    } catch (error) {
+      console.error("Error refreshing token:", error);
+      set({ authUser: null });
+      return false;
+    } finally {
+      set({ isRefreshingToken : false});
+    }
+  },
+
   connectSocket : () => {
 
     const {authUser} = get();
@@ -88,6 +106,7 @@ export const useAuthStore = create((set, get) => ({
     })
     
   },
+
   disconnectSocket : () => {
     if(get().socket?.connected) get().socket?.disconnect();
   },

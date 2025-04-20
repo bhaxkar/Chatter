@@ -1,6 +1,6 @@
 # Chatter - Real-time Chat Application
 
-Chatter is a fully responsive real-time chat application that enables users to communicate instantly with each other. It is built with a robust tech stack, including **React.js** and **Tailwind CSS** for the frontend, **Node.js** and **Express.js** for the backend, and **Socket.io** for real-time communication. It provides features like real-time messaging with image sharing capabilities in chats, online/offline user status, user authentication, and profile management.
+Chatter is a fully responsive real-time chat application that enables users to communicate instantly with each other. It is built with a robust tech stack, including **React.js** and **Tailwind CSS** for the frontend, **Zustand** for efficient state management, **Node.js** and **Express.js** for the backend, and **Socket.io** for real-time communication. It provides features like real-time messaging with image sharing capabilities in chats, online/offline user status, user authentication, and profile management.
 
 ## Technical Description 📃
 
