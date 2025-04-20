@@ -57,7 +57,7 @@ export const signup = async( req, res ) => {
                 name: newUser.name,
                 email: newUser.email,
                 avatar: newUser.avatar,
-                createdAt: user.createdAt,
+                createdAt: newUser.createdAt,
             })
         } else {
             return res.status(201).json({message: "Something went worng during registration"});
@@ -154,7 +154,7 @@ export const refreshAccessToken = async(req, res) => {
         console.log("Error while refreshing access token", error.message);
         return res.status(500).json({ message: "Something went wrong while refreshing access token" });
     }
-}
+};
 
 export const validateAuth = async( req, res ) => {
     try {
