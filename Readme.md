@@ -6,19 +6,19 @@ Chatter is a fully responsive real-time chat application that enables users to c
 
 - **Real-time Communication**: Implemented real-time messaging and live user status updates using ```Socket.IO```, enabling seamless bidirectional communication.
 
-- **State Management**: Built efficient state management system using ```Zustand``` for optimized performance
+- **State Management**: Built efficient state management system using ```Zustand``` for optimized performance.
 
 - **Navigation**: Utilized ```React Router v6``` for client-side routing with dynamic routes for seamless navigation.
 
-- **Responsive UI**: Designed fully responsive UI using ```Tailwind CSS``` following modern design principles
+- **Responsive UI**: The frontend is built with ```React.js``` and designed fully responsive UI using ```Tailwind CSS``` for a modern mobile-friendly experience.
+  
+- **Authentication**: Implemented secure user authentication using ``` JWT and bcrypt.js ```with HTTP-only cookies for enhanced security measures.
 
-- **Authentication**: Implemented secure user authentication using ``` JWT and bcrypt.js ```with HTTP-only cookies for enhanced security measures
+- **Database**: Designed and integrated ```MongoDB``` database schema using ```Mongoose``` ODM for efficient data modeling and relationships.
 
-- **Database**: Designed and integrated ```MongoDB``` database schema using ```Mongoose``` ODM for efficient data modeling and relationships
+- **API Endpoints**: Built RESTful API endpoints with ```Express.js``` following MVC architecture for clean code organization.
 
-- **API Endpoints**: Built RESTful API endpoints with ```Express.js``` following MVC architecture for clean code organization
-
-- **File Upload**: Integrated ```Cloudinary cloud storage``` for media management, handling user profile pictures and message attachments
+- **File Upload**: Integrated ```Cloudinary cloud storage``` for media management, handling user profile pictures and message attachments.
 
 <div align="center">
 
