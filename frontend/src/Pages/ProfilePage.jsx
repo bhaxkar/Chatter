@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 import { useProfileStore } from "../store/useProfileStore";
+import { FaCamera, FaUser, FaPen } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const ProfilePage = () => {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -50,18 +52,7 @@ const ProfilePage = () => {
                   ${isUpdatingAvatar ? "animate-pulse pointer-events-none" : ""}
                 `}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-white"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                <FaCamera className="h-5 w-5 text-white"/>
                 <input
                   type="file"
                   id="avatar-upload"
@@ -89,20 +80,7 @@ const ProfilePage = () => {
                 
                 <div>
                   <label className="flex items-center text-gray-600 text-sm mb-1 font-medium">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 mr-2 text-blue-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
+                    <FaUser  className="h-4 w-4 mr-2 text-blue-500"/>
                     Full Name
                   </label>
                   <input
@@ -115,20 +93,7 @@ const ProfilePage = () => {
 
                 <div>
                   <label className="flex items-center text-gray-600 text-sm mb-1 font-medium">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 mr-2 text-blue-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                    <MdEmail  className="h-4 w-4 mr-2 text-blue-500"/>
                     Email Address
                   </label>
                   <input
@@ -146,14 +111,7 @@ const ProfilePage = () => {
                     Account Information
                   </h2>
                   <button className="text-blue-600 hover:text-blue-800 transition-colors">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                    </svg>
+                    <FaPen/>
                   </button>
                 </div>
 

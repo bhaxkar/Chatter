@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 import { useProfileStore } from "../store/useProfileStore";
+import { FaUser } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import toast from "react-hot-toast";
 
 const UpdateProfilePage = () => {
@@ -51,20 +53,7 @@ const UpdateProfilePage = () => {
               <div className="space-y-4">
                 <div>
                   <label className="flex items-center text-gray-600 text-sm mb-1 font-medium">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 mr-2 text-blue-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
+                    <FaUser  className="h-4 w-4 mr-2 text-blue-500"/>
                     Full Name
                   </label>
                   <input
@@ -81,20 +70,7 @@ const UpdateProfilePage = () => {
 
                 <div>
                   <label className="flex items-center text-gray-600 text-sm mb-1 font-medium">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 mr-2 text-blue-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                    <MdEmail className="h-4 w-4 mr-2 text-blue-500"/>
                     Email Address
                   </label>
                   <input

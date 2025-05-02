@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useProfileStore } from "../store/useProfileStore";
+import { RiLockPasswordFill } from "react-icons/ri";
 import toast from "react-hot-toast";
 
 
@@ -58,20 +59,7 @@ const ChangePasswordPage = () => {
               <div className="space-y-4">
                 <div>
                   <label className="flex items-center text-gray-600 text-sm mb-1 font-medium">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 mr-2 text-blue-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
-                    </svg>
+                    <RiLockPasswordFill className="h-4 w-4 mr-2 text-blue-500" />
                     Current Password
                   </label>
                   <input
@@ -91,20 +79,7 @@ const ChangePasswordPage = () => {
 
                 <div>
                   <label className="flex items-center text-gray-600 text-sm mb-1 font-medium">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 mr-2 text-blue-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
-                    </svg>
+                   <RiLockPasswordFill className="h-4 w-4 mr-2 text-blue-500" />
                     New Password
                   </label>
                   <input
@@ -122,20 +97,7 @@ const ChangePasswordPage = () => {
 
                 <div>
                   <label className="flex items-center text-gray-600 text-sm mb-1 font-medium">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 mr-2 text-blue-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
-                    </svg>
+                    <RiLockPasswordFill className="h-4 w-4 mr-2 text-blue-500" />
                     Confirm New Password
                   </label>
                   <input
